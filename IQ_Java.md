@@ -126,6 +126,19 @@ public class Train {
     // _constructor, getter method_
 }
 ```
+# 9. Reverse String
+```
+// Type 1
+String str = "Java";
+StringBuilder sb = new StringBuilder();
+sb.append(str);
+System.out.println("Reverse Print using String Builder :" + sb.reverse());
 
-
-
+// Type 2
+String reverseString = "";
+char[] rString = str.toCharArray();
+for(int i=rString.length-1;i>=0;i--){
+    reverseString += String.valueOf(rString[i]);
+}
+System.out.println("Reverse Print using for loop :" + reverseString);
+```
