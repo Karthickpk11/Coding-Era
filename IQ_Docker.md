@@ -1,3 +1,9 @@
+# What is Docker Compose?
+
+A tool to define and run multi-container applications using a docker-compose.yml file.
+
+---
+
 # What is Docker networking?
 
 Allows containers to communicate using:  
