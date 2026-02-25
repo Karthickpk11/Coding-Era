@@ -1,4 +1,20 @@
 
+# What is Docker networking?
+  Docker networking is the system that enables containers to communicate with each other, with the host machine, and with external networks (like the internet).  
+Because containers are isolated by design, Docker provides built-in networking features to control how they connect and share data securely and efficiently.
+
+---
+
+# Why Docker Networking Matters?
+When you run multiple containers (for example, a web app + database), they need a way to:  
+* Talk to each other
+* Expose services to the outside world
+* Stay isolated when necessary
+* Control traffic flow
+* Docker networking handles all of this.
+
+---
+
 # Docker Image Layers
 Docker images are built in layers.
 Each instruction creates a new layer.
@@ -21,8 +37,10 @@ Layer 3 → package.json
 Layer 4 → npm install
 Layer 5 → App source code
 ```
+
 If Layer 3 changes → Layers 4 & 5 rebuild  
 If only Layer 5 changes → Only last layer rebuilds  
+
 ---
 Key Interview Concepts
 * Docker uses Union File System
