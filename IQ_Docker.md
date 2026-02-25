@@ -1,5 +1,6 @@
 # What is Docker?
 Docker is an open-source platform used to build, package, and run containers.
+
 ---
 # What is a Docker Container?
 A running instance of a Docker image.
