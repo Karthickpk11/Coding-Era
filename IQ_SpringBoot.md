@@ -1,3 +1,5 @@
+Just telling 😊
+
 # 1. What is Dependency Injection?
 
 Dependency Injection is a design pattern where:
@@ -175,7 +177,6 @@ public class AppConfig {
 ```
 
 ---
-
 # 🔹 Comparison Table
 
 | Type        | Recommended | Testable | Immutable | Usage                 |
@@ -183,16 +184,12 @@ public class AppConfig {
 | Constructor | ✅ Yes       | ✅ Easy   | ✅ Yes     | Most cases            |
 | Setter      | ⚠ Sometimes | ⚠ Medium | ❌ No      | Optional dependencies |
 | Field       | ❌ No        | ❌ Hard   | ❌ No      | Avoid                 |
-
 ---
 
 # 🔹 Best Practice in Spring Boot
 
-✔ Use **Constructor Injection**
-✔ Use `final` fields
-✔ Avoid field injection
-✔ Use `@Qualifier` when multiple beans exist
-
+✔ Use **Constructor Injection**    
+✔ Use `final` fields    
+✔ Avoid field injection    
+✔ Use `@Qualifier` when multiple beans exist    
 ---
-
-Just tell me 😊
