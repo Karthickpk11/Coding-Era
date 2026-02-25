@@ -201,13 +201,22 @@ Complete Lifecycle Flow (Simple View):
 2. Inject Dependencies
 3. Aware Methods
 4. BeanPostProcessor (before)
-5. @PostConstruct
-6. afterPropertiesSet()
-7. Custom init()
+Initialization Phase
+    5. @PostConstruct
+    6. afterPropertiesSet()
+    7. Custom init()
 8. BeanPostProcessor (after)
 9. Bean Ready (Now the bean is fully initialized and managed by the container)    
-**Bean Destruction Phase**    
-10. @PreDestroy
-11. destroy()
-12. Custom destroy()
+Bean Destruction Phase    
+    10. @PreDestroy
+    11. destroy()
+    12. Custom destroy()
 ```
+---
+Bean Scopes in Spring    
+* singleton    
+* prototype       
+* request    
+* session    
+* application    
+---
