@@ -18,7 +18,7 @@ if(Arrays.equals(strChar, strChar2)){
 }
 ```
 # 2. Count the Sequence of Character
-```
+```java
 String str = "Java";
 Map<Character, Integer> mp  = new HashMap<>();
 
@@ -30,7 +30,7 @@ for(char c: char1){
 mp.entrySet().stream().forEach((k) -> System.out.println(k.getKey() + " <> " +k.getValue()));
 ```
 # 3. Find a Palindrome Integer
-```
+```java
 Integer val = 121;
 int original = val;
 int reverse = 0;
@@ -47,7 +47,7 @@ if(original == reverse){
 }
 ```
 # 4. Reverse Integer
-```
+```java
 Integer val = 143;
 int reverse = 0;
 
@@ -58,7 +58,7 @@ while(val > 0){ //iterating 3 times
 System.out.println("reverse :: " + reverse);
 ```
 # 5. Find first missingPositiveNumber
-```
+```java
 int[] numbers = {1, 2, 6, 4, 1, 2};
 
 // 1. Remove the duplicate elements in list using Set interface.
@@ -83,7 +83,7 @@ System.out.println(findPositiveNumber);
 System.out.println("Find first missingPositiveNumber" +missingPositiveNumber);
 ```
 # 6. Print Fibonacci series using recursion
-```
+```java
 public static int fibonaci(int n){
     if (n <= 1){
         return n;
@@ -101,7 +101,7 @@ public static void main(String[] args) {
 ```
 # 7. Fruits Shop calculation
 # Fruits shop has 2 banana - (each rs 15), 5 water melon - (each RS 40), 10 orange - (each rs 50), Sold 2 banana and again added 3 banana - (each rs 25)
-```
+```java
 Map<String, List<FruitsBean>> fruitsCost = new HashMap<>();
 fruitsCost.put("watermelon", Arrays.asList(new FruitsBean("watermelon", 5, 40)));
 fruitsCost.put("orange", Arrays.asList(new FruitsBean("orange", 10, 50)));
@@ -112,7 +112,7 @@ Map<String, Integer> finalres = result.stream().collect(Collectors.toMap(FruitsB
 System.out.println(finalres);
 ```
 # 8. Create 10 Train object with 1 hour plus timezone.
-```
+```java
 LocalDateTime localDateTime = LocalDateTime.now();
 for(int i=1;i<= 10;i++){
     localDateTime = localDateTime.plusHours(1);
@@ -127,7 +127,7 @@ public class Train {
 }
 ```
 # 9. Reverse String
-```
+```java
 // Type 1
 String str = "Java";
 StringBuilder sb = new StringBuilder();
