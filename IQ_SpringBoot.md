@@ -175,7 +175,6 @@ public class AppConfig {
     }
 }
 ```
-
 ---
 # 🔹 Comparison Table
 
@@ -186,10 +185,28 @@ public class AppConfig {
 | Field       | ❌ No        | ❌ Hard   | ❌ No      | Avoid                 |
 ---
 
-# 🔹 Best Practice in Spring Boot
-
+# 🔹 Best Practice in Spring Boot    
 ✔ Use **Constructor Injection**    
 ✔ Use `final` fields    
 ✔ Avoid field injection    
 ✔ Use `@Qualifier` when multiple beans exist    
 ---
+---
+#  4. Life Cycle of Spring Bean    
+how a bean is created, initialized, used, and destroyed inside the Spring IoC container.
+
+Complete Lifecycle Flow (Simple View):    
+```
+1. Instantiate Bean
+2. Inject Dependencies
+3. Aware Methods
+4. BeanPostProcessor (before)
+5. @PostConstruct
+6. afterPropertiesSet()
+7. Custom init()
+8. BeanPostProcessor (after)
+9. Bean Ready
+10. @PreDestroy
+11. destroy()
+12. Custom destroy()
+```
