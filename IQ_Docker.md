@@ -1,3 +1,11 @@
+# What is containerization?
+
+Containerization is a lightweight virtualization method that packages an application with its dependencies into a container so it runs consistently across environments (dev, test, prod).
+
+Unlike VMs, containers share the host OS kernel.
+
+------
+
 # What is Docker?
 Docker is an open-source platform used to build, package, and run containers.
 
