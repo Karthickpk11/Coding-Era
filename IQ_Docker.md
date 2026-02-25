@@ -1,3 +1,12 @@
+# What is Docker networking?
+
+Allows containers to communicate using:  
+* bridge (default)
+* host
+* none
+* overlay
+
+---
 
 # What is Docker networking?
   Docker networking is the system that enables containers to communicate with each other, with the host machine, and with external networks (like the internet).  
