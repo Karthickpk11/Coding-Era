@@ -1,11 +1,19 @@
-# What is Docker Compose?
+# What is a Docker Container?
+A running instance of a Docker image.
 
+---
+
+# What is a Docker Image?
+A read-only template that contains application code, runtime, libraries, and dependencies used to create containers.
+
+---
+
+# What is Docker Compose?
 A tool to define and run multi-container applications using a docker-compose.yml file.
 
 ---
 
 # What is Docker networking?
-
 Allows containers to communicate using:  
 * bridge (default)
 * host
