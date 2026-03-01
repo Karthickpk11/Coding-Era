@@ -1,4 +1,4 @@
-# **scenario: A person Booking a movie ticket via mobile app but the payments not done due to payment service down. how to resolve this in issue?**
+# **scenario: Booking a movie ticket via mobile app**
 
 Here's the **project structure** for the movie ticket booking application using **React**, **Spring Boot**, and **SOLID principles**:
 
