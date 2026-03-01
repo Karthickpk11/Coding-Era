@@ -182,3 +182,316 @@ movie-booking-backend/
 ---
 
 This structure ensures that the application is maintainable, scalable, and follows best practices for both front-end and back-end development, while adhering to the SOLID principles for clean and extensible code.
+
+
+
+### Project: **Booking a Movie Ticket via Mobile App with Payment Service Failure Handling**
+
+This project involves building a simple movie ticket booking application using **React** for the front-end and **Spring Boot** for the back-end. The goal is to implement payment failure handling in a user-friendly manner, and we’ll apply **SOLID principles** to ensure maintainable and scalable code.
+
+---
+
+### **Technologies Used**:
+
+* **React** for the front-end
+* **Spring Boot** for the back-end
+* **Stripe API** (or another payment provider) for handling payments
+* **Java** for implementing SOLID principles
+* **MySQL** for the database (to store user and booking details)
+
+---
+
+### **Project Structure**:
+
+* **Frontend (React)**: Handles the user interface, booking UI, and payment flow.
+* **Backend (Spring Boot)**: Handles business logic, payment processing, and communicates with the front-end.
+
+---
+
+### **1. Frontend (React)**
+
+#### 1.1 Install Dependencies
+
+```bash
+npx create-react-app movie-booking-app
+cd movie-booking-app
+npm install axios react-router-dom stripe react-stripe-checkout
+```
+
+#### 1.2 Create Payment Service (PaymentService.js)
+
+Create a `PaymentService.js` that handles payment logic via Stripe or another payment gateway.
+
+```js
+import axios from 'axios';
+
+class PaymentService {
+  static async processPayment(paymentData) {
+    try {
+      const response = await axios.post('http://localhost:8080/api/payment', paymentData);
+      return response.data;
+    } catch (error) {
+      throw new Error('Payment processing failed. Please try again later.');
+    }
+  }
+}
+
+export default PaymentService;
+```
+
+#### 1.3 Movie Booking Component (Booking.js)
+
+```js
+import React, { useState } from 'react';
+import StripeCheckout from 'react-stripe-checkout';
+import PaymentService from './PaymentService';
+
+const Booking = () => {
+  const [ticketDetails, setTicketDetails] = useState({ movie: 'Avengers', price: 15 });
+  const [paymentStatus, setPaymentStatus] = useState('');
+
+  const handleToken = async (token) => {
+    const paymentData = {
+      token,
+      amount: ticketDetails.price * 100, // Price in cents
+      movie: ticketDetails.movie,
+    };
+
+    try {
+      const response = await PaymentService.processPayment(paymentData);
+      setPaymentStatus(response.message); // Success message
+    } catch (error) {
+      setPaymentStatus(error.message); // Error message
+    }
+  };
+
+  return (
+    <div className="booking-container">
+      <h2>Book Your Movie Ticket</h2>
+      <p>Movie: {ticketDetails.movie}</p>
+      <p>Price: ${ticketDetails.price}</p>
+
+      <StripeCheckout
+        stripeKey="your-publishable-key-here"
+        token={handleToken}
+        amount={ticketDetails.price * 100}
+        name="Movie Booking"
+        description={`Book your ticket for ${ticketDetails.movie}`}
+        currency="USD"
+      />
+
+      {paymentStatus && <p>{paymentStatus}</p>}
+    </div>
+  );
+};
+
+export default Booking;
+```
+
+---
+
+### **2. Backend (Spring Boot)**
+
+#### 2.1 Create Spring Boot Project
+
+Create a new Spring Boot application using Spring Initializr with dependencies for **Spring Web**, **Spring Boot DevTools**, **Stripe SDK**, and **MySQL**.
+
+#### 2.2 Controller for Payment Processing (PaymentController.java)
+
+```java
+package com.example.moviebooking.controller;
+
+import com.example.moviebooking.service.PaymentService;
+import com.stripe.exception.StripeException;
+import com.stripe.model.PaymentIntent;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/api/payment")
+public class PaymentController {
+
+    private final PaymentService paymentService;
+
+    public PaymentController(PaymentService paymentService) {
+        this.paymentService = paymentService;
+    }
+
+    @PostMapping
+    public Map<String, String> processPayment(@RequestBody PaymentRequest paymentRequest) throws StripeException {
+        PaymentIntent paymentIntent = paymentService.createPaymentIntent(paymentRequest);
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Payment successful!");
+        return response;
+    }
+}
+
+class PaymentRequest {
+    public String token;
+    public int amount;
+    public String movie;
+}
+```
+
+#### 2.3 Payment Service (PaymentService.java)
+
+The service will use **SOLID principles**, focusing on **Single Responsibility Principle** (SRP), **Dependency Inversion Principle** (DIP), and **Interface Segregation Principle** (ISP).
+
+```java
+package com.example.moviebooking.service;
+
+import com.stripe.exception.StripeException;
+import com.stripe.model.PaymentIntent;
+import com.stripe.net.RequestOptions;
+import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
+import java.util.Map;
+
+@Service
+public class PaymentService {
+
+    private static final String STRIPE_SECRET_KEY = "your-secret-key-here";
+
+    public PaymentIntent createPaymentIntent(PaymentRequest paymentRequest) throws StripeException {
+        Map<String, Object> params = new HashMap<>();
+        params.put("amount", paymentRequest.amount);
+        params.put("currency", "usd");
+        params.put("payment_method", paymentRequest.token);
+
+        // Create PaymentIntent
+        RequestOptions requestOptions = RequestOptions.builder().setApiKey(STRIPE_SECRET_KEY).build();
+        return PaymentIntent.create(params, requestOptions);
+    }
+}
+```
+
+#### 2.4 Application Configuration for Stripe (StripeConfig.java)
+
+```java
+package com.example.moviebooking.config;
+
+import com.stripe.Stripe;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class StripeConfig {
+
+    public StripeConfig() {
+        Stripe.apiKey = "your-secret-key-here";
+    }
+}
+```
+
+---
+
+### **3. SOLID Principles Applied**
+
+1. **Single Responsibility Principle (SRP)**:
+
+   * The `PaymentService` handles only payment logic.
+   * `PaymentController` only handles HTTP requests.
+
+2. **Open/Closed Principle (OCP)**:
+
+   * The payment method can be extended to support other payment providers without modifying existing code.
+
+3. **Liskov Substitution Principle (LSP)**:
+
+   * If we were to extend payment services to include other providers (e.g., PayPal), we could extend `PaymentService` and implement a new subclass without affecting the existing code.
+
+4. **Interface Segregation Principle (ISP)**:
+
+   * We create separate classes and interfaces for different payment services if needed, ensuring no unnecessary dependencies are injected into other parts of the application.
+
+5. **Dependency Inversion Principle (DIP)**:
+
+   * The `PaymentService` class depends on abstractions (e.g., `PaymentGateway`) rather than concrete classes.
+
+---
+
+### **4. MySQL Integration**
+
+#### 4.1 MySQL Setup
+
+* Set up a MySQL database to store user bookings and payment information.
+
+#### 4.2 Booking Entity (Booking.java)
+
+```java
+package com.example.moviebooking.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
+@Entity
+public class Booking {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String movie;
+    private String user;
+    private int amount;
+
+    // Getters and setters
+}
+```
+
+#### 4.3 Booking Repository (BookingRepository.java)
+
+```java
+package com.example.moviebooking.repository;
+
+import com.example.moviebooking.entity.Booking;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface BookingRepository extends JpaRepository<Booking, Long> {
+}
+```
+
+#### 4.4 Booking Service (BookingService.java)
+
+```java
+package com.example.moviebooking.service;
+
+import com.example.moviebooking.entity.Booking;
+import com.example.moviebooking.repository.BookingRepository;
+import org.springframework.stereotype.Service;
+
+@Service
+public class BookingService {
+
+    private final BookingRepository bookingRepository;
+
+    public BookingService(BookingRepository bookingRepository) {
+        this.bookingRepository = bookingRepository;
+    }
+
+    public Booking createBooking(String movie, String user, int amount) {
+        Booking booking = new Booking();
+        booking.setMovie(movie);
+        booking.setUser(user);
+        booking.setAmount(amount);
+        return bookingRepository.save(booking);
+    }
+}
+```
+
+---
+
+### **5. Handling Payment Failures**
+
+* If the payment fails (due to issues like service downtime or insufficient funds), the backend can catch the error, log it, and return an appropriate message to the front-end (e.g., “Payment failed. Please try again later.”).
+* The front-end can show the failure message and allow the user to retry or select an alternative payment method.
+
+---
+
+### **Conclusion**
+
+By applying SOLID principles, we have built a simple yet scalable system that can handle movie ticket bookings, process payments, and manage payment failures efficiently. This architecture can be expanded in the future to support multiple payment providers or additional features like user authentication, booking history, etc.
