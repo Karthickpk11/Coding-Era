@@ -211,3 +211,11 @@ An index:
 * Uses extra storage
 
 ---
+
+Find the user count for each department?
+
+```sql
+-- Group By User(employer_id)
+Select employer_name, count(*) from employers emp 
+LEFT JOIN departments dep ON emp.employer_id = dep.employer_id Group By emp.employer_id;
+```
