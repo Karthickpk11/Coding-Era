@@ -232,3 +232,16 @@ LEFT JOIN departments dep ON emp.employer_id = dep.employer_id Group By emp.empl
 
 ---
 
+How to add new columns in the tables?
+```sql
+ALTER TABLE employers ADD salary INT;
+```
+
+---
+
+How to Update value in new columns in the tables?
+```sql
+Update employers SET  salary = 12000 where employer_id = 2;
+```
+
+---
