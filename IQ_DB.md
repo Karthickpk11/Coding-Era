@@ -252,9 +252,7 @@ Update employers SET  salary = salary + 5000 where employer_id = 2;
 HOw to view the index in POstgreSQL?
 ```sql
 SELECT indexname, indexdef FROM pg_indexes WHERE tablename = 'employers';
-
-<img width="811" height="97" alt="image" src="https://github.com/user-attachments/assets/6c580799-7154-4e8f-8b7b-44e132968c60" />
-
 ```
+<img width="811" height="97" alt="image" src="https://github.com/user-attachments/assets/6c580799-7154-4e8f-8b7b-44e132968c60" />
 
 ---
