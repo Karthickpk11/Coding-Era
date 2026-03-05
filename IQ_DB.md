@@ -336,10 +336,14 @@ ALTER TABLE Employees_NoDuplicates RENAME TO Employees;
 
 # How would you optimize the performance of PL/SQL code?
 
-1. Use `BULK COLLECT` and `FORALL`: Instead of fetching rows one by one, fetch them in bulk.
-2. Avoid Using Cursors Inside Loops: Try to minimize the use of cursors within loops. Instead, fetch data once and process it.
-3. Use Bind Variables: Using bind variables in SQL queries instead of literals can help in reusing execution plans and improving performance.
-4. Limit the Data Retrieved: Avoid unnecessary data retrieval. Always filter data by using appropriate `WHERE` clauses.
-5. Use Proper Indexing: Ensure that the database tables are indexed properly for frequently queried columns.        
+1. **Use `BULK COLLECT` and `FORALL`**: Instead of fetching rows one by one, fetch them in bulk.
+2. **Avoid Using Cursors Inside Loops**: Try to minimize the use of cursors within loops. Instead, fetch data once and process it.
+3. **Use Bind Variables**: Using bind variables in SQL queries instead of literals can help in reusing execution plans and improving performance.
+4. **Limit the Data Retrieved**: Avoid unnecessary data retrieval. Always filter data by using appropriate `WHERE` clauses.
+5. **Use Proper Indexing**: Ensure that the database tables are indexed properly for frequently queried columns.        
 
+# Why should we use bind variables?
+```
+Bind variables improve SQL performance by allowing the database to reuse execution plans, reduce parsing overhead, and protect applications from SQL injection attacks.
+```
 ---
