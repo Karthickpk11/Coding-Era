@@ -212,7 +212,7 @@ An index:
 
 ---
 
-Find the user count for each department?
+# Find the user count for each department?
 
 ```sql
 -- GROUP By Department(dept_id)
@@ -220,7 +220,7 @@ Select dept_name, count(*) from departments dept
 LEFT JOIN employers emp ON dept.employer_id = emp.employer_id Group By dept.dept_id;
 ```
 
-Find the depart count for each user?
+# Find the depart count for each user?
 
 ```sql
 -- Group By User(employer_id)
@@ -228,12 +228,12 @@ Select employer_name, count(*) from employers emp
 LEFT JOIN departments dep ON emp.employer_id = dep.employer_id Group By emp.employer_id;
 ```
 
-How to add new columns in the tables?
+# How to add new columns in the tables?
 ```sql
 ALTER TABLE employers ADD salary INT;
 ```
 
-How to Update value in new columns in the tables?
+# How to Update value in new columns in the tables?
 ```sql
 Update employers SET  salary = 12000 where employer_id = 2;
 ```
@@ -243,13 +243,13 @@ This increases salary by 5000 for condition base
 Update employers SET  salary = salary + 5000 where employer_id = 2;
 ```
 
-How to view the index in POstgreSQL?
+# How to view the index in POstgreSQL?
 ```sql
 SELECT indexname, indexdef FROM pg_indexes WHERE tablename = 'employers';
 ```
 <img width="811" height="97" alt="image" src="https://github.com/user-attachments/assets/6c580799-7154-4e8f-8b7b-44e132968c60" />
 
-What is correlated subquery?
+# What is correlated subquery?
 
 A correlated subquery is a subquery that references columns from the outer query. Unlike a regular subquery, which is independent and runs once, a correlated subquery is evaluated for each row processed by the outer query. This makes it dependent on the outer query. In a correlated subquery, the subquery depends on the outer query, _meaning that for each row of the outer query, the inner query is executed_.
 
@@ -262,7 +262,7 @@ WHERE column3 = (
     WHERE outer_table.column = inner_table.column
 );
 ```
-# Key Points to Remember About Correlated Subqueries:
+ Key Points to Remember About Correlated Subqueries:
 
 * **Reference to Outer Query**: The subquery references columns from the outer query.
 
