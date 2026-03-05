@@ -271,4 +271,67 @@ WHERE column3 = (
 * **Efficiency**: Correlated subqueries can be less efficient than non-correlated subqueries, as the inner query is executed multiple times, once for each row in the outer query.
 
 
+How to remove the duplicate row in the table?
+
+To delete duplicate rows in an SQL table, you need to identify the rows that are duplicates and then remove them. There are different methods to do this depending on the SQL database you're using, but the general approach involves using a DELETE query with a **JOIN** or `ROW_NUMBER()` window function.
+
+1) Using ROW_NUMBER() (For most SQL databases like PostgreSQL, SQL Server, MySQL 8.0+):
+
+If you want to delete duplicates and keep one unique row, you can use a ROW_NUMBER() window function to assign a unique number to each row, and then delete the duplicates (rows where ROW_NUMBER > 1).
+
+```sql
+WITH DuplicateRows AS (
+    SELECT 
+        EmployeeID,
+        FirstName,
+        LastName,
+        Department,
+        ROW_NUMBER() OVER (PARTITION BY FirstName, LastName, Department ORDER BY EmployeeID) AS RowNum
+    FROM Employees
+)
+DELETE FROM Employees
+WHERE EmployeeID IN (
+    SELECT EmployeeID
+    FROM DuplicateRows
+    WHERE RowNum > 1
+);
+```
+
+Explanation:
+
+* ROW_NUMBER() assigns a unique number to each row for a given group (in this case, FirstName, LastName, and Department).
+
+* The PARTITION BY clause groups rows that have the same values for FirstName, LastName, and Department.
+
+* The ORDER BY EmployeeID ensures that the rows are numbered in a consistent way.
+
+* Then, we delete rows where RowNum > 1, i.e., all duplicate rows except the first one.
+
+2) Using DISTINCT to Remove Duplicates (If you want to keep only unique rows in a new table):
+
+If you want to remove duplicates and create a new table without the duplicates, you can use the DISTINCT keyword.
+```sql
+CREATE TABLE Employees_NoDuplicates AS
+SELECT DISTINCT FirstName, LastName, Department
+FROM Employees;
+```
+
+Then you can drop the old table and rename the new one:
+
+```sql
+DROP TABLE Employees;
+ALTER TABLE Employees_NoDuplicates RENAME TO Employees;
+```
+
+**Explanation:**
+
+* This query creates a new table Employees_NoDuplicates with unique rows (using DISTINCT).
+* Then, it drops the old table and renames the new table to the original name.
+
+### Which Method Should You Use?
+
+* **`ROW_NUMBER()`** is the most efficient and modern way to handle this in databases that support it (PostgreSQL, SQL Server, MySQL 8.0+).
+* **`JOIN` method** is more widely compatible but can be less efficient for larger tables.
+* **`DISTINCT` and `GROUP BY`** are useful for creating a new table without duplicates, but may not preserve all original data if there are other columns you want to keep.
+  
 ---
