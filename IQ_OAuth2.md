@@ -71,4 +71,3 @@
 
 **Answer:** `spring-boot-starter-oauth2-resource-server`
 
-Do you want me to do that?
