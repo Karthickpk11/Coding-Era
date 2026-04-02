@@ -34,6 +34,9 @@ Solution:
         }
     }
     System.out.println(result);
+
+   Result:
+   This array of element [2,7] equal to target values ; Indices :[1,3]
 ```
 
 This is the classic Two Sum problem. The most efficient way is to use a `HashMap` to store numbers and their indices while iterating.
