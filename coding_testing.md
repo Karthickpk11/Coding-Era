@@ -17,11 +17,6 @@ Example 2:
 Input: nums = [3,2,4], target = 6
 Output: [1,2]
 
-Constraints:   
-2 <= nums.length <= 104   
--109 <= nums[i] <= 109   
--109 <= target <= 109   
-
 Only one valid answer exists.
 
 Given a string, return the first character that does not repeat.
