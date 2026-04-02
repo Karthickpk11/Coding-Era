@@ -92,22 +92,21 @@ input: "abcabcde" ? output: "d"
 
 ```java
 
-public class FindFirstElementnonRepeatedCharacter {
-    public static void main(String[] args) {
+     String s1 = "swiss";
+     Map<Character, Integer> charCount = new HashMap<>();
 
-        String s1 = "swiss";
-        Map<Character, Integer> charCount = new HashMap<>();
+     char[] ch = s1.toCharArray();
+     for(char c:ch){
+         charCount.put(c, charCount.getOrDefault(c,0)+1);
+     }
+   
+     Stream<Character> s = charCount.entrySet().stream().filter(e -> e.getValue() == 1).map(Map.Entry::getKey);
+     s.findFirst().ifPresentOrElse(
+             chr -> System.out.println("First character: " + chr),
+             () -> System.out.println("Non Repeated Character not found!!")
+     );
 
-        char[] ch = s1.toCharArray();
-        for(char c:ch){
-            charCount.put(c, charCount.getOrDefault(c,0)+1);
-        }
-
-        Stream<Character> s = charCount.entrySet().stream().filter(e -> e.getValue() == 1).map(Map.Entry::getKey);
-        s.findFirst().ifPresent(System.out::println);
-    }
-}
-
-Result:   
-w
+   Result:   
+   w
 ```
+
