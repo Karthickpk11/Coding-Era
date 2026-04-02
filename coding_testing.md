@@ -6,7 +6,7 @@ You may assume that each input would have exactly one solution, and you may not 
 
 You can return the answer in any order.
 
-**Question:**
+**Coding: 1**
 
 Example 1:
 Input: nums = [11,2,15,7], target = 9
@@ -16,12 +16,6 @@ Explanation: Because nums[1] + nums[3] == 9, we return [1, 3].
 Example 2:
 Input: nums = [3,2,4], target = 6
 Output: [1,2]
-
-Only one valid answer exists.
-
-Given a string, return the first character that does not repeat.
-
-If all characters repeat, return null.
 
 Solution:
 ✅ Use looping to solve the Two Sum problem.
@@ -80,4 +74,40 @@ Solution:
 
    Result:   
    This array of element [2,7] equal to target values ; Indices :[1,3]
+```
+
+**Coding: 2**
+
+Given a string, return the first character that does not repeat.
+
+If all characters repeat, return null.
+
+Examples:
+
+input: "swiss" ? output: "w"
+
+input: "aabbcc" ? output: null
+
+input: "abcabcde" ? output: "d"
+
+```java
+
+public class FindFirstElementnonRepeatedCharacter {
+    public static void main(String[] args) {
+
+        String s1 = "swiss";
+        Map<Character, Integer> charCount = new HashMap<>();
+
+        char[] ch = s1.toCharArray();
+        for(char c:ch){
+            charCount.put(c, charCount.getOrDefault(c,0)+1);
+        }
+
+        Stream<Character> s = charCount.entrySet().stream().filter(e -> e.getValue() == 1).map(Map.Entry::getKey);
+        s.findFirst().ifPresent(System.out::println);
+    }
+}
+
+Result:   
+w
 ```
