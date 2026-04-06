@@ -1,5 +1,5 @@
 ### Optimum Solution Coding Test:
-
+## Fruits Shop calculation    
 Fruits shop has 2 banana - (each rs 15), 5 water melon - (each RS 40), 10 orange - (each rs 50), Sold 2 banana and again added 3 banana - (each rs 25)
 
 ```java
