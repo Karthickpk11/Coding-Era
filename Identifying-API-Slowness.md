@@ -151,17 +151,3 @@ Typical reasons for slow REST APIs:
 * Synchronous processing of heavy tasks
 * Poor connection pooling
 * Too many microservice hops
-
-### 10. Quick Debug Checklist
-
-When you see slowness, ask:
-
-1. Is TTFB high?
-2. Which backend step is slow?
-3. Is DB time high?
-4. Are external APIs slow?
-5. Is the server overloaded?
-6. Does it happen under load or always?
-
-
-If you want, tell me your tech stack (Node.js, Java Spring, .NET, etc.), and I can give a more targeted debugging checklist or even sample logging code.
