@@ -110,3 +110,40 @@ input: "abcabcde" ? output: "d"
    w
 ```
 
+### Collection operation
+
+```java
+
+        Supplier<List<Integer>> collList = () -> Arrays.asList(1,1,3,2,2,4,5,7,7);
+
+        List<Integer> sortingList = collList.get().stream().sorted().collect(Collectors.toList());
+        System.out.println("Sorting list: " +sortingList);
+
+        List<Integer> removeduplicate = collList.get().stream().sorted().distinct().collect(Collectors.toList());
+        System.out.println("Remove duplicate : " +removeduplicate);
+
+        int targetValue = 9;
+
+        List<Integer> inputLst = removeduplicate;
+        List<String> storage = new ArrayList<>();
+
+        for(int i=0;i<inputLst.size();i++){
+            for(int j=i;j<inputLst.size();j++){
+                int tmp = inputLst.get(i) + inputLst.get(j);
+                if(tmp == targetValue){
+                    storage.add("["+i+","+j+"]");
+                }
+            }
+        }
+        System.out.println("Find Indices : ");
+        storage.stream().forEach(System.out::println);
+
+        Map<Integer, Integer> counting = new HashMap<>();
+
+        for(Integer val: sortingList){
+            counting.put(val, counting.getOrDefault(val, 0) + 1);
+        }
+        System.out.println("Counting the each character : ");
+        counting.entrySet().stream().forEach(res -> System.out.print("["+res.getKey() + "," + res.getValue()+"] "));
+```
+
