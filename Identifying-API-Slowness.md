@@ -8,7 +8,7 @@ Identifying REST API slowness isn’t about one single check—it’s about narr
 
 Your job is to time each segment and find the slowest one.
 
-# 1. Measure the Right Things First
+### 1. Measure the Right Things First
 
 Start by breaking total response time into components:
 
@@ -29,7 +29,7 @@ Tools:
 
 ---
 
-# 2. Add Server-Side Timing Logs
+### 2. Add Server-Side Timing Logs
 
 Instrument your API to log timing at each stage:
 
@@ -46,7 +46,7 @@ Example checkpoints:
 
 ---
 
-# 3. Check Database Performance
+### 3. Check Database Performance
 
 A very common bottleneck.
 
@@ -65,9 +65,7 @@ Tools:
 
 👉 If DB time dominates → optimize queries or indexing.
 
----
-
-# 4. Inspect External Dependencies
+### 4. Inspect External Dependencies
 
 If your API calls other services:
 
@@ -82,9 +80,7 @@ Check:
 
 👉 Slow downstream service = slow API.
 
----
-
-# 5. Monitor Application Performance (APM)
+### 5. Monitor Application Performance (APM)
 
 Use an APM tool to visualize latency breakdown:
 
@@ -100,9 +96,7 @@ They show:
 * Bottlenecks per endpoint
 * Slow transactions
 
----
-
-# 6. Check Server Resource Usage
+### 6. Check Server Resource Usage
 
 Even good code slows down on stressed servers.
 
@@ -119,9 +113,7 @@ Monitor:
 * High memory → leaks or heavy payloads
 * Thread starvation → concurrency issues
 
----
-
-# 7. Analyze Network Latency
+### 7. Analyze Network Latency
 
 Sometimes the issue isn’t your backend.
 
@@ -138,9 +130,7 @@ Tools:
 
 👉 High latency across regions → use caching/CDN.
 
----
-
-# 8. Load Testing & Reproduction
+### 8. Load Testing & Reproduction
 
 Test under realistic traffic:
 
@@ -154,9 +144,7 @@ Check:
 * At what load it slows down
 * Whether latency grows linearly or suddenly spikes
 
----
-
-# 9. Look for Common Root Causes
+### 9. Look for Common Root Causes
 
 Typical reasons for slow REST APIs:
 
@@ -168,9 +156,7 @@ Typical reasons for slow REST APIs:
 * Poor connection pooling
 * Too many microservice hops
 
----
-
-# 10. Quick Debug Checklist
+### 10. Quick Debug Checklist
 
 When you see slowness, ask:
 
