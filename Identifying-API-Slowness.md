@@ -27,8 +27,6 @@ Tools:
 👉 If TTFB is high → backend is slow
 👉 If download time is high → response size/network issue
 
----
-
 ### 2. Add Server-Side Timing Logs
 
 Instrument your API to log timing at each stage:
@@ -43,8 +41,6 @@ Example checkpoints:
 * Response sent
 
 👉 This helps pinpoint *which step* is slow.
-
----
 
 ### 3. Check Database Performance
 
