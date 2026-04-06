@@ -115,13 +115,13 @@ input: "abcabcde" ? output: "d"
 ```java
 
         Supplier<List<Integer>> collList = () -> Arrays.asList(1,1,3,2,2,4,5,7,7);
-
+         //Sorting
         List<Integer> sortingList = collList.get().stream().sorted().collect(Collectors.toList());
         System.out.println("Sorting list: " +sortingList);
-
+         //RemoveDuplicate
         List<Integer> removeduplicate = collList.get().stream().sorted().distinct().collect(Collectors.toList());
         System.out.println("Remove duplicate : " +removeduplicate);
-
+         //Find position of array value
         int targetValue = 9;
 
         List<Integer> inputLst = removeduplicate;
@@ -137,13 +137,13 @@ input: "abcabcde" ? output: "d"
         }
         System.out.println("Find Indices : ");
         storage.stream().forEach(System.out::println);
-
+         //Counting the repeated element 
         Map<Integer, Integer> counting = new HashMap<>();
 
         for(Integer val: sortingList){
             counting.put(val, counting.getOrDefault(val, 0) + 1);
         }
-        System.out.println("Counting the each character : ");
+        System.out.println("Counting the repeated element : ");
         counting.entrySet().stream().forEach(res -> System.out.print("["+res.getKey() + "," + res.getValue()+"] "));
 ```
 
