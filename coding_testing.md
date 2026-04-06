@@ -1,3 +1,36 @@
+### Optimum Solution Coding Test:
+
+Fruits shop has 2 banana - (each rs 15), 5 water melon - (each RS 40), 10 orange - (each rs 50), Sold 2 banana and again added 3 banana - (each rs 25)
+
+```java
+Map<String, List<FruitsBean>> fruitsCost = new HashMap<>();
+fruitsCost.put("watermelon", Arrays.asList(new FruitsBean("watermelon", 5, 40)));
+fruitsCost.put("orange", Arrays.asList(new FruitsBean("orange", 10, 50)));
+fruitsCost.computeIfAbsent("banana", k -> new ArrayList<>()).add(new FruitsBean("banana", 2, 15));
+fruitsCost.computeIfAbsent("banana", k ->  new ArrayList<>()).add(new FruitsBean("banana", 3, 25));
+List<FruitsBean> result = fruitsCost.values().stream().flatMap(List::stream).collect(Collectors.toList());
+Map<String, Integer> finalres = result.stream().collect(Collectors.toMap(FruitsBean::getName, val -> val.getItems() * val.getPrice(), (r1,r2) -> r2 ));
+System.out.println(finalres);
+```
+
+### Wipro Coding Test:
+```java
+String s1 = "listen";
+String s2 = "silent";
+
+char[] strChar = s1.toCharArray();
+Arrays.sort(strChar);
+
+char[] strChar2 = s2.toCharArray();
+Arrays.sort(strChar2);
+
+if(Arrays.equals(strChar, strChar2)){
+    System.out.println("Anagram");
+} else {
+    System.out.println("Not Anagram");
+}
+```
+
 ### Equinix Coding Test:
 
 Given an array of integers numbers and an integer target, return indices of the two numbers such that they add up to target.
