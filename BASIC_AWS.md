@@ -1,4 +1,4 @@
-## Architecture depth, trade-offs, real-world problem solving, leadership, and cost/security optimization.
+## Architecture depth, trade-offs, real-world problem solving, and cost/security optimization.
 
 # 1. Architecture & Design (Advanced)  
 Design a globally distributed, highly available system on AWS.
