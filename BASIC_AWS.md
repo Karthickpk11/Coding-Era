@@ -83,3 +83,124 @@ How it works
     Disaster recovery setups
     Cost-sensitive applications
     Apps that tolerate brief downtime
+
+---
+
+## Route 53?    
+Amazon Route 53 is AWS’s `scalable Domain Name System (DNS) and traffic routing service`. It translates human-friendly domain names (like example.com) into IP addresses and intelligently routes users to the right backend.
+
+What Route 53 Actually Does
+
+When a user types a domain:
+
+1. Route 53 receives the DNS query
+2. Decides **where to send the request**
+3. Returns the best IP endpoint (server, load balancer, region)
+
+It’s called **“Route 53”** because:
+
+* “Route” → traffic routing
+* “53” → standard DNS port (UDP/TCP 53)
+
+# Core Features
+
+1. DNS Management
+
+    * Register domains
+    * Create DNS records (A, AAAA, CNAME, MX, etc.)
+    * Example: Point `app.example.com` → EC2 / Load Balancer
+
+2. Intelligent Routing Policies
+
+    Simple Routing
+    
+    * One resource → one domain
+    * No health checks
+    
+    Weighted Routing
+    
+    * Split traffic (e.g., 70% / 30%)
+    * Useful for A/B testing
+    
+    Latency-Based Routing
+    
+    * Sends users to **closest region**
+    * Example: India users → Mumbai region
+    
+    Health Check + Failover Routing
+    
+    * Detects unhealthy endpoints
+    * Automatically switches to backup (used in Active-Passive)
+    
+    Geolocation Routing
+    
+    * Routes based on **user location**
+    * Example: EU users → EU servers (for compliance)
+    
+    Multi-Value Routing
+    
+    * Returns multiple IPs
+    * Basic load balancing with health checks
+
+3. Health Checks
+
+    Route 53 can monitor:
+    
+    * HTTP/HTTPS endpoints
+    * TCP ports
+    * CloudWatch alarms
+    
+    If a service fails → traffic is rerouted automatically.
+
+Integration with AWS
+
+Works seamlessly with:
+
+* **Elastic Load Balancing** – Route to ALB/NLB
+* **Amazon CloudFront** – Global content delivery
+* **Amazon S3** – Static website hosting
+* **Amazon EC2** – Application servers
+
+---
+
+Route 53 in Multi-Region Architectures
+
+    Active-Active
+    
+    * Uses **Latency-based routing**
+    * Sends users to nearest healthy region
+    * Can combine with weighted routing
+    
+    Active-Passive
+    
+    * Uses **Failover routing**
+    * Primary region → Secondary only on failure
+
+Example Scenarios
+
+    Global Web App
+    
+    * India users → Mumbai
+    * US users → Virginia
+      👉 Achieved using latency routing
+    
+     🚨 Disaster Recovery
+    
+    * Primary app in Region A
+    * Backup in Region B
+      👉 Failover routing switches automatically
+    
+    🧪 A/B Testing
+    
+    * Version A → 80% traffic
+    * Version B → 20% traffic
+      👉 Weighted routing
+
+ Why Use Route 53?
+
+    * Highly available (global AWS infrastructure)
+    * Low latency DNS resolution
+    * Built-in health checks
+    * Fine-grained traffic control
+
+---
