@@ -22,9 +22,7 @@ Both regions are live and serving traffic simultaneously.
 How it works
 
     Users are routed to the nearest or healthiest region
-    
     Both regions process requests
-    
     Data is replicated between regions in near real-time
     
 🛠 Key AWS Services
