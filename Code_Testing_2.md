@@ -116,6 +116,8 @@ Sample Output
     2 x 9 = 18
     2 x 10 = 20
 
+**Solution:**
+
 ```java
     int N = Integer.parseInt(bufferedReader.readLine().trim());
     
