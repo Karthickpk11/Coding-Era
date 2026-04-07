@@ -28,20 +28,22 @@ How it works
 🛠 Key AWS Services
 
     Amazon Route 53 – Latency-based / health check routing
-    
     Amazon CloudFront – Global edge delivery
-    
     Amazon DynamoDB (Global Tables) – Multi-region DB
-    
     Amazon Aurora (Global Database) – Cross-region replication
     
 ✅ Pros
+
     High availability (no downtime even if one region fails)
     Low latency (users hit nearest region)
     Load balancing across regions
+    
 ❌ Cons
+
     Complex (data consistency, conflict resolution)
     Expensive (both regions fully active)
+    
 📌 Best for
+
     Global apps (e.g., streaming, gaming)
     Mission-critical systems requiring near-zero downtime
