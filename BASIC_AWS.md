@@ -55,9 +55,9 @@ One region is active; the other is on standby.
 
 How it works
 
-Primary region handles all traffic
-Secondary region is idle or partially active
-Failover happens only if primary fails
+    Primary region handles all traffic
+    Secondary region is idle or partially active
+    Failover happens only if primary fails
 
 🛠 Key AWS Services
 
