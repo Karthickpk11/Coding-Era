@@ -16,7 +16,7 @@ Multi-region architecture in Amazon Web Services is about running your applicati
 What is a Multi-Region Setup?  
 AWS regions (like Mumbai, Singapore, etc.) are geographically separate. If one region fails, another can continue serving users.
 
-1. Active-Active Architecture
+**1. Active-Active Architecture**
 
 Both regions are live and serving traffic simultaneously.
 
@@ -49,7 +49,7 @@ How it works
     Global apps (e.g., streaming, gaming)
     Mission-critical systems requiring near-zero downtime
 
-Active-Passive Architecture
+**2. Active-Passive Architecture**
 
 One region is active; the other is on standby.
 
