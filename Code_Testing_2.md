@@ -88,7 +88,7 @@ Sample Output
 
 ----
 
-## 3. Given an integer, , print its first  multiples. Each multiple  (where ) should be printed on a new line in the form: N x i = result.
+## 3. Given an integer a, b, print its first  multiples. Each multiple  (where ) should be printed on a new line in the form: N x i = result.
 
 Input Format
 
@@ -129,4 +129,65 @@ Sample Output
 ```
 
 ----
+
+## 4. We use the integers a, b, and n to create the following series:
+<img width="728" height="167" alt="image" src="https://github.com/user-attachments/assets/069319d9-902f-4c24-9aad-9b9f61d076fb" />
+
+**Solution:**
+
+```java
+     public static void main(String []argh){
+        Scanner in = new Scanner(System.in);
+        int t=in.nextInt();
+        for(int i=0;i<t;i++){
+            int a = in.nextInt();
+            int b = in.nextInt();
+            int n = in.nextInt();
+            
+            // System.out.print(a +" "+ b +" "+ n);
+            for(int j=1;j<=n;j++){
+              int frsl = a + calcus(1, b, j);
+                System.out.print(frsl + " ");
+            }
+            System.out.println();
+        }
+        in.close();
+    }
+    
+    private static int calcus(int k, int b, int n){
+        int i = 0; //looping starting element
+        int r = 0; //storing total value
+        while(i < n){
+            int result = k * b;
+            //System.out.printf("%d . %d = %d", k, b, result);
+            k = k + k; // squaring element
+            i++; //increment element until n equal
+            r = r + result; // add the result.
+        }
+        return r;
+    }
+    
+```
+
+Output Format
+
+      For each query, print the corresponding series on a new line. Each series must be printed in order as a single line of  space-separated integers.
+
+Sample Input
+
+      2
+      0 2 10
+      5 3 5
+      
+Sample Output
+
+      2 6 14 30 62 126 254 510 1022 2046
+      8 14 26 50 98
+
+----
+
+
+
+
+
 
