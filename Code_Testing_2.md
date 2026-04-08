@@ -171,7 +171,7 @@ Sample Output
 
 Output Format
 
-      For each query, print the corresponding series on a new line. Each series must be printed in order as a single line of  space-separated integers.
+For each query, print the corresponding series on a new line. Each series must be printed in order as a single line of  space-separated integers.
 
 Sample Input
 
