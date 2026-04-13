@@ -139,17 +139,17 @@ How Strong Encapsulation is Applied
 
 ✅ Internal packages are NOT exported
 
-internal classes cannot be accessed outside their module
+* internal classes cannot be accessed outside their module
 
 ✅ Only APIs are exposed
 
-exports com.bank.accounts.api
-exports com.bank.security.api
+* exports com.bank.accounts.api
+* exports com.bank.security.api
 
 ✅ Sensitive logic hidden
 
-Encryption logic is private
-Account balance not directly accessible
+* Encryption logic is private
+* Account balance not directly accessible
 
 ---
 
