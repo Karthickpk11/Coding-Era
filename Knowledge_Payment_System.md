@@ -1,8 +1,8 @@
-### Domain knowledge of Financial Clearing and Payment Systems and ISO20022
+## Domain knowledge of Financial Clearing and Payment Systems and ISO20022
 
-# 1. Financial Clearing & Payment Systems
+### 1. Financial Clearing & Payment Systems
 
-## What is a Payment System?
+### What is a Payment System?
 
 A **payment system** is the infrastructure that allows money to move from a payer to a receiver. It includes banks, rules, technology, and processes.
 
@@ -14,7 +14,7 @@ A **payment system** is the infrastructure that allows money to move from a paye
 * **Payment Networks**
 * **Settlement Systems**
 
-## What is Clearing?
+### What is Clearing?
 
 **Clearing** is the process of:
 
@@ -25,14 +25,14 @@ A **payment system** is the infrastructure that allows money to move from a paye
 👉 Example:
 If Bank A owes Bank B ₹1000 and Bank B owes Bank A ₹600 → clearing nets it to ₹400 payable by Bank A.
 
-## What is Settlement?
+### What is Settlement?
 
 **Settlement** is the **actual transfer of funds** between banks.
 
 * Happens after clearing
 * Final and irrevocable
 
-## Types of Settlement Systems
+### Types of Settlement Systems
 
 ### 1. Gross Settlement
 
@@ -64,14 +64,14 @@ If Bank A owes Bank B ₹1000 and Bank B owes Bank A ₹600 → clearing nets it
 * 24/7 instant payments
 * Widely used in India
 
-## Key Participants in Payment Systems
+### Key Participants in Payment Systems
 
 * Central Bank (e.g., Reserve Bank of India)
 * Commercial Banks
 * Payment Service Providers
 * Clearing Houses
 
-## Clearing Houses
+### Clearing Houses
 
 A **clearing house** acts as an intermediary:
 
@@ -79,7 +79,7 @@ A **clearing house** acts as an intermediary:
 * Calculates net obligations
 * Reduces risk
 
-## Risks in Payment Systems
+### Risks in Payment Systems
 
 * **Credit Risk** – one party defaults
 * **Liquidity Risk** – delay in payment
@@ -88,9 +88,9 @@ A **clearing house** acts as an intermediary:
 
 ---
 
-# 2. ISO 20022 Standard
+### 2. ISO 20022 Standard
 
-## What is ISO 20022?
+### What is ISO 20022?
 
 ISO 20022 is a **global standard for electronic data interchange between financial institutions**.
 
@@ -100,7 +100,7 @@ It defines:
 * Data structure
 * Communication rules
 
-## Why ISO 20022 Was Introduced
+### Why ISO 20022 Was Introduced
 
 Older systems (like SWIFT MT messages) had:
 
@@ -113,7 +113,7 @@ ISO 20022 solves this by:
 * Standardizing financial messages globally
 * Enabling richer, structured data
 
-## Key Features
+### Key Features
 
 ### 1. Rich Data Structure
 
@@ -138,7 +138,7 @@ ISO 20022 solves this by:
   * Trade finance
   * Cards
 
-## Message Types (Examples)
+### Message Types (Examples)
 
 * **pacs** → Payments clearing & settlement
 * **pain** → Payment initiation
@@ -149,7 +149,7 @@ ISO 20022 solves this by:
 * **pacs.008** → Customer credit transfer
 * **camt.053** → Bank statement
 
-## Real-World Usage
+### Real-World Usage
 
 ### Global Systems Using ISO 20022
 
@@ -164,7 +164,7 @@ India is gradually aligning systems like:
 * RTGS
 * NEFT
 
-## Benefits of ISO 20022
+### Benefits of ISO 20022
 
 ### 1. Better Data Quality
 
@@ -182,7 +182,7 @@ India is gradually aligning systems like:
 
 * End-to-end payment tracking
 
-## ISO 20022 vs Old SWIFT MT
+### ISO 20022 vs Old SWIFT MT
 
 | Feature     | SWIFT MT   | ISO 20022       |
 | ----------- | ---------- | --------------- |
@@ -193,7 +193,7 @@ India is gradually aligning systems like:
 
 ---
 
-# 3. How Clearing Systems and ISO 20022 Work Together
+### 3. How Clearing Systems and ISO 20022 Work Together
 
 ### Flow:
 
@@ -205,7 +205,7 @@ India is gradually aligning systems like:
 
 ---
 
-# 4. Simple Analogy
+### 4. Simple Analogy
 
 Think of it like:
 
@@ -216,7 +216,7 @@ Think of it like:
 
 ---
 
-# 5. Key Takeaways
+### 5. Key Takeaways
 
 * Clearing = **calculation & validation**
 * Settlement = **actual money transfer**
@@ -226,7 +226,7 @@ Think of it like:
 
 ---
 
-### 💳 Card-Based Money Transfer Flow (Visa / Mastercard)
+# 💳 Card-Based Money Transfer Flow (Visa / Mastercard)
 
 ```id="cardflow1"
 [ Sender (Card Holder) ]
@@ -279,7 +279,7 @@ Think of it like:
 
 ---
 
-# 🔄 Simplified End-to-End Flow
+### 🔄 Simplified End-to-End Flow
 
 ```id="cardflow2"
 You (Card) 
@@ -298,7 +298,7 @@ You (Card)
 
 ---
 
-# ⚙️ Step-by-Step Explanation
+### ⚙️ Step-by-Step Explanation
 
 ### 1. Payment Initiation
 
@@ -338,7 +338,7 @@ You (Card)
 
 ---
 
-# 🧾 With ISO 20022 Messaging Layer
+### 🧾 With ISO 20022 Messaging Layer
 
 ```id="cardflow3"
 [ Merchant System ]
@@ -379,7 +379,7 @@ You (Card)
 
 ---
 
-# 🧠 Key Concepts
+### 🧠 Key Concepts
 
 * **Issuer Bank** → Your bank
 * **Acquirer Bank** → Merchant’s bank
@@ -390,7 +390,7 @@ You (Card)
 
 ---
 
-# ⚡ Quick Comparison
+### ⚡ Quick Comparison
 
 | Feature        | UPI       | Card (Visa/Mastercard)                    |
 | -------------- | --------- | ----------------------------------------- |
