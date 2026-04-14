@@ -224,4 +224,177 @@ Think of it like:
 * ISO 20022 = **global messaging standard**
 * Future of banking = **data-rich, real-time, interoperable payments**
 
+---
 
+### 💳 Card-Based Money Transfer Flow (Visa / Mastercard)
+
+```id="cardflow1"
+[ Sender (Card Holder) ]
+        │
+        ▼
+[ Initiates Payment ]
+ (Swipe / Online / App)
+        │
+        ▼
+[ Merchant / Payment Gateway ]
+        │
+        ▼
+[ Acquiring Bank ]
+ (Merchant's Bank)
+        │
+        ▼
+[ Card Network ]
+ (Visa / Mastercard)
+        │
+        ▼
+[ Issuing Bank ]
+ (Customer's Bank)
+        │
+        ▼
+[ Authorization Response ]
+ (Approved / Declined)
+        │
+        ▼
+[ Merchant Confirmation ]
+        │
+        ▼
+------ Clearing Phase ------
+        │
+        ▼
+[ Card Network ]
+ (Calculates obligations)
+        │
+        ▼
+------ Settlement Phase ------
+        │
+        ▼
+[ Settlement Bank / Central System ]
+        │
+        ▼
+[ Acquiring Bank ]
+        │
+        ▼
+[ Merchant Receives Funds ]
+```
+
+---
+
+# 🔄 Simplified End-to-End Flow
+
+```id="cardflow2"
+You (Card) 
+   → Merchant 
+      → Acquirer Bank 
+         → Visa/Mastercard Network 
+            → Your Bank (Issuer)
+               → Approval
+            ←
+         ←
+      ←
+   ←
+
+(Clearing & Settlement Happens Later)
+```
+
+---
+
+# ⚙️ Step-by-Step Explanation
+
+### 1. Payment Initiation
+
+* You use your card (debit/credit)
+* Happens at POS machine or online
+
+---
+
+### 2. Authorization
+
+* Merchant sends request to **Acquiring Bank**
+* Routed via Visa / Mastercard
+* **Issuing Bank** checks:
+
+  * Balance / credit limit
+  * Fraud checks
+* Approves or declines
+
+---
+
+### 3. Clearing
+
+* Happens in batches later
+* Networks calculate:
+
+  * Who owes whom
+  * Fees (interchange, network fees)
+
+---
+
+### 4. Settlement
+
+* Actual money moves:
+
+  * Issuer → Acquirer
+* Merchant receives funds (T+1 or T+2 days)
+
+---
+
+# 🧾 With ISO 20022 Messaging Layer
+
+```id="cardflow3"
+[ Merchant System ]
+      │
+      ▼
+(Authorization Message - ISO format)
+      │
+      ▼
+[ Acquirer Bank ]
+      │
+      ▼
+[ Visa / Mastercard Network ]
+      │
+      ▼
+[ Issuer Bank ]
+      │
+      ▼
+(Response Message)
+      │
+      ▼
+------ Clearing ------
+      │
+      ▼
+(pacs messages)
+      │
+      ▼
+------ Settlement ------
+      │
+      ▼
+(camt messages)
+```
+
+👉 Uses ISO 20022 for:
+
+* Structured transaction data
+* Faster reconciliation
+* Better fraud monitoring
+
+---
+
+# 🧠 Key Concepts
+
+* **Issuer Bank** → Your bank
+* **Acquirer Bank** → Merchant’s bank
+* **Card Network** → Visa / Mastercard
+* **Authorization** → Instant approval
+* **Clearing** → Batch processing
+* **Settlement** → Actual fund transfer
+
+---
+
+# ⚡ Quick Comparison
+
+| Feature        | UPI       | Card (Visa/Mastercard)                    |
+| -------------- | --------- | ----------------------------------------- |
+| Speed          | Instant   | Authorization instant, settlement delayed |
+| Intermediaries | Few       | Many                                      |
+| Cost           | Low       | Higher fees                               |
+| Settlement     | Real-time | T+1 / T+2                                 |
