@@ -281,15 +281,15 @@ Expand each word to get 'world hello'. Now reverse the words to get 'hello world
               }
           } catch (Exception e) {
               temp = c;
-             //System.out.println(e);
-             sb.append(c);
+              sb.append(c);
           }
       }
 
-     String result = sb.toString();
+      String result = sb.toString();
       List<String > rr = Arrays.asList(result.split(" "));
       System.out.println(rr);
-  
+
+      // reverse the words (not character)
       for(int i = rr.size()- 1; i>=0;i--){
           if(i != rr.size()){
               System.out.print(" ");
