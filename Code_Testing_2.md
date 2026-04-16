@@ -247,4 +247,54 @@ Sample Output
 
 ----
 
+## 6. Java: Encryption and Decryption
 
+Decrypt a message that was encrypted using the following logic:
+
+First the words in the sentence are reversed. For example, "welcome to hackerrank" becomes "hackerrank to welcome".
+
+For each word, adjacent repeated letters are compressed in the format <character><frequency>. For example, "mississippi" becomes "mis2is2ip2i" or "baaa" becomes "ba3". Note the format is not applied for characters with frequency 1. Also, the frequency will be no greater than 9.
+
+Return the decrypted string.
+
+Example
+
+encryptedMessage = 'world hel2o'
+
+Expand each word to get 'world hello'. Now reverse the words to get 'hello world', the return value.
+
+**Solution:**
+
+```java
+      String decMsg = "world hel2o";
+
+      char[] ch = decMsg.toCharArray();
+      StringBuilder sb = new StringBuilder();
+
+      char temp = 0;
+      for(char c:ch){
+          try{
+              int i = Integer.parseInt(String.valueOf(c));
+              while(1<i){
+                  sb.append(temp);
+                  i--;
+              }
+          } catch (Exception e) {
+              temp = c;
+             //System.out.println(e);
+             sb.append(c);
+          }
+      }
+
+     String result = sb.toString();
+      List<String > rr = Arrays.asList(result.split(" "));
+      System.out.println(rr);
+  
+      for(int i = rr.size()- 1; i>=0;i--){
+          if(i != rr.size()){
+              System.out.print(" ");
+          }
+          System.out.print(rr.get(i));
+      }
+
+```
