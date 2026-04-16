@@ -278,6 +278,11 @@ Expand each word to get 'world hello'. Now reverse the words to get 'hello world
           try{
               // 3. input c convert into Integer, if not get an exception repeat the Last character using while loop until end. 
               int i = Integer.parseInt(String.valueOf(c));
+
+              // 5. the frequency will be no greater than 9
+              if(i > 9){
+                  i = 9;
+              }
               while(1<i){
                   sb.append(temp);
                   i--;
@@ -290,11 +295,11 @@ Expand each word to get 'world hello'. Now reverse the words to get 'hello world
       }
 
       String result = sb.toString();
-      // 5. split the words by " ".
+      // 6. split the words by " ".
       List<String > rr = Arrays.asList(result.split(" "));
       System.out.println(rr);
 
-      // 6. reverse the words (not character) to print the output.
+      // 7. reverse the words (not character) to print the output.
       for(int i = rr.size()- 1; i>=0;i--){
           if(i != rr.size()){
               System.out.print(" ");
