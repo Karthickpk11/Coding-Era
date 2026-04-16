@@ -268,28 +268,33 @@ Expand each word to get 'world hello'. Now reverse the words to get 'hello world
 ```java
       String decMsg = "world hel2o";
 
+      // 1. Seperate the character.
       char[] ch = decMsg.toCharArray();
       StringBuilder sb = new StringBuilder();
 
+      // 2. declare temp value.
       char temp = 0;
       for(char c:ch){
           try{
+              // 3. input c convert into Integer, if not get an exception repeat the Last character using while loop until end. 
               int i = Integer.parseInt(String.valueOf(c));
               while(1<i){
                   sb.append(temp);
                   i--;
               }
           } catch (Exception e) {
+              // 4. if you get an exception add the value in below varriable, temp used for repeat the character.
               temp = c;
               sb.append(c);
           }
       }
 
       String result = sb.toString();
+      // 5. split the words by " ".
       List<String > rr = Arrays.asList(result.split(" "));
       System.out.println(rr);
 
-      // reverse the words (not character)
+      // 6. reverse the words (not character) to print the output.
       for(int i = rr.size()- 1; i>=0;i--){
           if(i != rr.size()){
               System.out.print(" ");
