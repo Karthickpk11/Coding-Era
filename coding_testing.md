@@ -125,6 +125,8 @@ input: "aabbcc" ? output: null
 
 input: "abcabcde" ? output: "d"
 
+FAANG-style expectation
+
 ```java
 
      String s1 = "swiss";
@@ -156,6 +158,15 @@ Using GroupingBy
                 c -> System.out.println("First character: " + c.getKey()),
                 () -> System.out.println("Not Record found")
         );
+
+```
+
+Banking-style solution
+
+```java
+        String str = "swiss";
+
+        str.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(c -> c, Collectors.counting())).entrySet().stream().filter(s -> s.getValue() == 1).findFirst().ifPresentOrElse(c -> System.out.println("First character: " + c.getKey()), () -> System.out.println("Not Record found"));
 
 ```
 
