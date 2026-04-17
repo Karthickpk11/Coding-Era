@@ -145,6 +145,20 @@ input: "abcabcde" ? output: "d"
    w
 ```
 
+Using GroupingBy
+
+```java
+        String str = "swiss";
+
+        Map<Character, Long> count = str.chars().mapToObj(c-> (char)c).collect(Collectors.groupingBy( c->c, Collectors.counting()));
+        System.out.println(count);
+        count.entrySet().stream().filter(c -> c.getValue() == 1).findFirst().ifPresentOrElse(
+                c -> System.out.println("First character: " + c.getKey()),
+                () -> System.out.println("Not Record found")
+        );
+
+```
+
 ### Collection operation
 
 ```java
