@@ -147,7 +147,7 @@ FAANG-style expectation
    w
 ```
 
-Using GroupingBy
+Banking-style solution Using GroupingBy
 
 ```java
         String str = "swiss";
@@ -160,8 +160,6 @@ Using GroupingBy
         );
 
 ```
-
-Banking-style solution
 
 ```java
         String str = "swiss";
