@@ -337,7 +337,7 @@ Using `groupingBy`
 
 ```
 
-## 8. Find the odd and even aray elements in java streams
+## 8. Find the odd and even aray elements Using java streams
 
 ```java
 
@@ -348,4 +348,6 @@ Using `groupingBy`
         System.out.println(result);
 
 ```
+`boxed()` is required because `int[] → IntStream`, but `groupingBy` works on objects (Integer).
+
 
