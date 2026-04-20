@@ -337,4 +337,15 @@ Using `groupingBy`
 
 ```
 
+## 8. Find the odd and even aray elements in java streams
+
+```java
+
+        int[] s = {3,4,5,6,1,2,3};
+        Arrays.sort(s);
+        
+        Map<String, List<Integer>> result = Arrays.stream(s).boxed().collect(Collectors.groupingBy(n -> n % 2 == 0 ? "Even" : "Odd"));
+        System.out.println(result);
+
+```
 
