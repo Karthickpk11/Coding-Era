@@ -329,3 +329,12 @@ How it works:
 * seen.add(n) returns false if the element already exists → meaning it's a duplicate.
 * distinct() ensures duplicates appear only once in the result.
 
+Using `groupingBy`
+
+```java
+
+        List<Integer> result = list.stream().collect(Collectors.groupingBy(n->n, Collectors.counting())).entrySet().stream().filter(e -> e.getValue()>1).map(Map.Entry::getKey).collect(Collectors.toList());
+
+```
+
+
