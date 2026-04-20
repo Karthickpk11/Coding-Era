@@ -308,3 +308,24 @@ Expand each word to get 'world hello'. Now reverse the words to get 'hello world
       }
 
 ```
+
+## 7. Find duplicate elements in a list
+
+```java
+
+        List<Integer> list = Arrays.asList(1, 2, 3, 2, 4, 5, 1, 6);
+
+        Set<Integer> seen = new HashSet<>();
+        List<Integer> duplicates = list.stream()
+                .filter(n -> !seen.add(n))
+                .distinct()
+                .collect(Collectors.toList());
+
+        System.out.println(duplicates);
+```
+
+How it works:
+
+* seen.add(n) returns false if the element already exists → meaning it's a duplicate.
+* distinct() ensures duplicates appear only once in the result.
+
