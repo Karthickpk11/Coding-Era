@@ -1,3 +1,104 @@
+### 🔹 What `GROUP BY` does
+
+It groups rows that have the same values in specified columns, so you can apply aggregate functions like:
+
+* `COUNT()`
+* `SUM()`
+* `AVG()`
+* `MAX()`
+* `MIN()`
+
+## ✅ Basic Syntax
+
+```sql id="a1b2c3"
+SELECT column_name, AGG_FUNCTION(column_name)
+FROM table_name
+GROUP BY column_name;
+```
+
+## 🔹 Common Interview Questions & Examples
+
+### 1. Count employees in each department
+
+```sql id="d4e5f6"
+SELECT department, COUNT(*) AS total_employees
+FROM employee
+GROUP BY department;
+```
+
+### 2. Find total salary by department
+
+```sql id="g7h8i9"
+SELECT department, SUM(salary) AS total_salary
+FROM employee
+GROUP BY department;
+```
+
+### 3. Find average salary per department
+
+```sql id="j1k2l3"
+SELECT department, AVG(salary) AS avg_salary
+FROM employee
+GROUP BY department;
+```
+
+### 4. Find departments with more than 5 employees (`HAVING`)
+
+```sql id="m4n5o6"
+SELECT department, COUNT(*) AS total_employees
+FROM employee
+GROUP BY department
+HAVING COUNT(*) > 5;
+```
+
+👉 `HAVING` is like `WHERE`, but for grouped data.
+
+### 5. Find highest salary in each department
+
+```sql id="p7q8r9"
+SELECT department, MAX(salary) AS highest_salary
+FROM employee
+GROUP BY department;
+```
+
+### 6. Group by multiple columns
+
+```sql id="s1t2u3"
+SELECT department, job_role, COUNT(*) AS total
+FROM employee
+GROUP BY department, job_role;
+```
+
+## 🔹 Important Interview Points
+
+* Every column in `SELECT` must either be:
+
+  * In `GROUP BY`, or
+  * Used with an aggregate function
+* `WHERE` filters rows **before grouping**
+* `HAVING` filters groups **after grouping**
+
+## 🔹 Trick Question (Very Common)
+
+❓ *Why does this fail?*
+
+```sql
+SELECT department, salary
+FROM employee
+GROUP BY department;
+```
+
+👉 Because `salary` is neither aggregated nor grouped.
+
+## 🔹 Bonus: Combine `WHERE` + `GROUP BY`
+
+```sql id="v4w5x6"
+SELECT department, COUNT(*) AS total
+FROM employee
+WHERE salary > 50000
+GROUP BY department;
+```
+
 ### 🟢 Basic Level
 
 ### 1. Count employees in each department
@@ -166,22 +267,3 @@
 
 💡 Hint: `RANK()` or `DENSE_RANK() OVER (PARTITION BY department)`
 
----
-
-# 💡 How to Practice Effectively
-
-* Try writing each query without looking at hints
-* Use a sample `employee` table:
-
-```sql id="sample1"
-(employee_id, name, department, salary, job_role)
-```
-
-* Focus on:
-
-  * `GROUP BY`
-  * `HAVING`
-  * Window functions (`RANK`, `DENSE_RANK`)
-
-
-Just tell me 👍
