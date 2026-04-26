@@ -169,6 +169,3 @@ When solving problems:
 1. Correctness first
 2. Then optimize
 3. Then improve readability
-
-
-If you want, I can walk you through a real problem step-by-step and show how to think through all three (time, space, readability) in practice.
