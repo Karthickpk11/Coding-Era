@@ -1,7 +1,5 @@
 Get better at solving problems in Java while balancing **time complexity, space usage, and readability**, you need a structured way of thinking—not just coding immediately. Here’s a practical approach you can apply to almost any problem.
 
----
-
 ## 1. Understand the problem deeply
 
 Before writing any code, clarify:
@@ -163,8 +161,6 @@ for (int i = 0; i < nums.length; i++) {
 ```
 
 Time: O(n), Space: O(n)
-
----
 
 ## Final mindset
 
