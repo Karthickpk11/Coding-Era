@@ -15,6 +15,18 @@ if (!map.containsKey(nums[i])) {
 ```
 
 👉 Interviewer expects:
-
 “I should avoid overwriting if first occurrence matters.”
 
+## 2. Null key behavior (TreeMap crash)
+### Trap:
+HashMap → allows 1 null key ✅    
+TreeMap → throws NullPointerException ❌
+
+Example:
+```java
+TreeMap<Integer, String> map = new TreeMap<>();
+map.put(null, "A"); // 💥 crash
+```
+
+👉 Interview line:    
+“TreeMap cannot handle null keys because it needs comparison.”
