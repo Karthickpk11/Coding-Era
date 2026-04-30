@@ -8,9 +8,11 @@ Where it fails:
 👉 Overwrites previous index → wrong answer
 
 ### Fix:
-```java if (!map.containsKey(nums[i])) {
+```java
+if (!map.containsKey(nums[i])) {
     map.put(nums[i], i);
-}  ```
+}
+```
 
 👉 Interviewer expects:
 
