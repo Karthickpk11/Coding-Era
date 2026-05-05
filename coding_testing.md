@@ -215,11 +215,12 @@ Validate a string so that it accepts only numbers values.
         String input = "12345";
 
         if(input.matches("\\d+")){
-            System.out.println("Valid number string");
+            // write logic here
+            System.out.println("True: Valid number string");
         } else if(input.matches(".*\\s.*")) {
-            System.out.println("Invalid: contains space");
+            System.out.println("False: Invalid contains space");
         } else {
-            System.out.println("InValid number string");
+            System.out.println("False: InValid number string");
         }
 
 ```
