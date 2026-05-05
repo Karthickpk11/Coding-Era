@@ -205,7 +205,7 @@ Banking-style solution Using GroupingBy
         counting.entrySet().stream().forEach(res -> System.out.print("["+res.getKey() + "," + res.getValue()+"] "));
 ```
 
-### Wipro Coding Test:
+### Wipro AI Coding Test:
 
 **Coding: 1**
 
