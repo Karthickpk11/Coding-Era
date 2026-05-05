@@ -241,26 +241,26 @@ Print the String value in reveres format.
 Describe the CRM project in SOW?
 
 Answer:
-    What SOW includes in a CRM context:    
-        **Scope of work:** What exactly will be done (e.g., CRM implementation, customization, integration)    
-        **Deliverables:** Outputs like configured CRM modules, reports, dashboards, or training sessions    
-        **Timeline:** Project phases and deadlines    
-        **Roles & responsibilities:** What the vendor does vs what the client is responsible for    
-        **Pricing & payment terms:** Cost structure, milestones, billing schedule    
-        **Acceptance criteria:** How success or completion is measured    
-        **Assumptions & constraints:** Dependencies or limitations (e.g., client provides data access)   
+What SOW includes in a CRM context:    
+    **Scope of work:** What exactly will be done (e.g., CRM implementation, customization, integration)    
+    **Deliverables:** Outputs like configured CRM modules, reports, dashboards, or training sessions    
+    **Timeline:** Project phases and deadlines    
+    **Roles & responsibilities:** What the vendor does vs what the client is responsible for    
+    **Pricing & payment terms:** Cost structure, milestones, billing schedule    
+    **Acceptance criteria:** How success or completion is measured    
+    **Assumptions & constraints:** Dependencies or limitations (e.g., client provides data access)   
+    
+Why it matters in CRM projects:    
+    * Prevents scope confusion (“scope creep”)    
+    * Aligns expectations between vendor and client    
+    * Acts as a legal/contractual reference    
+    * Helps track project progress and accountability    
         
-    Why it matters in CRM projects:    
-        * Prevents scope confusion (“scope creep”)    
-        * Aligns expectations between vendor and client    
-        * Acts as a legal/contractual reference    
-        * Helps track project progress and accountability    
-        
-    Simple example:
+Simple example:
     
     If a company is implementing Salesforce, the SOW would clearly state:
-    
-    which Salesforce modules will be set up,
-    how many users are included,
-    whether data migration is included,
-    and when the system will go live.
+
+    * which Salesforce modules will be set up,
+    * how many users are included,
+    * whether data migration is included,
+    * and when the system will go live.
