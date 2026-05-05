@@ -248,12 +248,13 @@ Answer:
         **Roles & responsibilities:** What the vendor does vs what the client is responsible for    
         **Pricing & payment terms:** Cost structure, milestones, billing schedule    
         **Acceptance criteria:** How success or completion is measured    
-        **Assumptions & constraints:** Dependencies or limitations (e.g., client provides data access)    
+        **Assumptions & constraints:** Dependencies or limitations (e.g., client provides data access)   
+        
     Why it matters in CRM projects:    
-        Prevents scope confusion (“scope creep”)    
-        Aligns expectations between vendor and client    
-        Acts as a legal/contractual reference    
-        Helps track project progress and accountability    
+        * Prevents scope confusion (“scope creep”)    
+        * Aligns expectations between vendor and client    
+        * Acts as a legal/contractual reference    
+        * Helps track project progress and accountability    
         
     Simple example:
     
