@@ -3,14 +3,38 @@
 Fruits shop has 2 banana - (each rs 15), 5 water melon - (each RS 40), 10 orange - (each rs 50), Sold 2 banana and again added 3 banana - (each rs 25)
 
 ```java
-Map<String, List<FruitsBean>> fruitsCost = new HashMap<>();
-fruitsCost.put("watermelon", Arrays.asList(new FruitsBean("watermelon", 5, 40)));
-fruitsCost.put("orange", Arrays.asList(new FruitsBean("orange", 10, 50)));
-fruitsCost.computeIfAbsent("banana", k -> new ArrayList<>()).add(new FruitsBean("banana", 2, 15));
-fruitsCost.computeIfAbsent("banana", k ->  new ArrayList<>()).add(new FruitsBean("banana", 3, 25));
-List<FruitsBean> result = fruitsCost.values().stream().flatMap(List::stream).collect(Collectors.toList());
-Map<String, Integer> finalres = result.stream().collect(Collectors.toMap(FruitsBean::getName, val -> val.getItems() * val.getPrice(), (r1,r2) -> r2 ));
-System.out.println(finalres);
+        // Initial stock
+        int bananaQty = 2;
+        int bananaPrice = 15;
+
+        int watermelonQty = 5;
+        int watermelonPrice = 40;
+
+        int orangeQty = 10;
+        int orangePrice = 50;
+
+        // Sold 2 bananas
+        bananaQty -= 2;
+
+        // Added 3 bananas at new price
+        int newBananaQty = 3;
+        int newBananaPrice = 25;
+
+        // Total value calculation
+        int totalValue = 0;
+
+        // Old bananas (if any left)
+        totalValue += bananaQty * bananaPrice;
+
+        // New bananas
+        totalValue += newBananaQty * newBananaPrice;
+
+        // Other fruits
+        totalValue += watermelonQty * watermelonPrice;
+        totalValue += orangeQty * orangePrice;
+
+        // Output result
+        System.out.println("Total stock value: Rs " + totalValue);
 ```
 
 ### Wipro Coding Test:
