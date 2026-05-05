@@ -205,3 +205,33 @@ Banking-style solution Using GroupingBy
         counting.entrySet().stream().forEach(res -> System.out.print("["+res.getKey() + "," + res.getValue()+"] "));
 ```
 
+### Wipro Coding Test:
+
+**Coding: 1**
+
+Validate a string so that it accepts only numbers values. 
+
+```java
+        String input = "12345";
+
+        if(input.matches("\\d+")){
+            System.out.println("Valid number string");
+        } else if(input.matches(".*\\s.*")) {
+            System.out.println("Invalid: contains space");
+        } else {
+            System.out.println("InValid number string");
+        }
+
+```
+
+**Coding: 2**
+
+Print the String value in reveres format.
+
+```java
+
+        String str = "hello";
+        StringBuilder sb = new StringBuilder();
+        sb.append(str);
+        System.out.println(sb.reverse());
+```
