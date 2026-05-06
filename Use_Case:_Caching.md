@@ -8,8 +8,6 @@ A banking application calculates a **risk score** for a customer (used for fraud
 * Risk score calculation is **expensive** (ML model / external service).
 * Once the `Customer` object is no longer in use (session ends), we don’t want to keep its risk score in memory.
 
----
-
 ## 🧠 Why WeakHashMap fits here
 
 We want:
@@ -21,8 +19,6 @@ We want:
 So we use:
 
 👉 `WeakHashMap<Customer, RiskProfile>`
-
----
 
 ## 🧾 Example Code
 
@@ -71,8 +67,6 @@ public class RiskEngine {
 }
 ```
 
----
-
 ## 🏦 Real Banking Flow
 
 ### Step-by-step:
@@ -87,8 +81,6 @@ public class RiskEngine {
 
    * Entry in `WeakHashMap` is removed
    * Risk score is also freed from memory
-
----
 
 ## ⚠️ Why NOT HashMap in banking here?
 
@@ -110,8 +102,6 @@ That’s dangerous in systems like:
 * Fraud detection engines
 * Payment gateways
 
----
-
 ## 💡 Key Banking Insight
 
 `WeakHashMap` is useful in banking systems for:
@@ -126,8 +116,6 @@ But NOT for:
 * Transaction records
 * Ledger entries
   (these must be persisted in databases, not weak references)
-
----
 
 ## 🧠 Simple Analogy
 
