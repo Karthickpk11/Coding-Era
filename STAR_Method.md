@@ -125,6 +125,34 @@
  
 ---
 
+## STAR Example 7 – Tell me about a time you solved a problem in a team in Banking Application?
+
+**Situation:**
+Our team was working on a banking application feature that allowed customers to transfer funds between accounts. During testing, we noticed that under certain conditions, the application would occasionally double debit a customer’s account—a serious issue that could lead to financial discrepancies and regulatory concerns.
+
+**Task:**
+As a team member, my responsibility was to identify the root cause of this problem, collaborate with developers and QA, and implement a solution quickly to ensure the application was safe for production.
+
+**Action:**
+
+1. **Investigation:** I worked with the QA team to replicate the issue and gathered detailed logs of the failed transactions.
+2. **Collaboration:** I coordinated daily stand-ups with developers, QA, and business analysts to discuss findings and brainstorm solutions.
+3. **Problem-solving:** We identified that the issue was caused by a race condition in the transaction processing logic when multiple transfers were initiated simultaneously.
+4. **Implementation:** I suggested adding synchronized transaction handling and implemented additional validation checks to prevent duplicate debits.
+5. **Testing:** We created edge-case scenarios in the test environment to ensure the fix worked under high concurrency.
+
+**Result:**
+The issue was resolved before the feature went live, preventing potential financial errors. The fix improved the reliability of the transfer module, and the team later adopted our approach as a standard practice for handling concurrent transactions. Management recognized our team for quickly mitigating a high-risk problem.
+
+---
+
+If you want, I can also **condense this into a 45–60 second interview-ready version** that’s punchy, clear, and memorable. It would sound like a natural story rather than a report.
+
+Do you want me to do that?
+
+
+---
+
 💡 **Pro Tips for STAR Use:**
 
 1. Always **quantify results** (%, time saved, revenue impact).
