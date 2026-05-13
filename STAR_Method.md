@@ -146,13 +146,6 @@ The issue was resolved before the feature went live, preventing potential financ
 
 ---
 
-If you want, I can also **condense this into a 45–60 second interview-ready version** that’s punchy, clear, and memorable. It would sound like a natural story rather than a report.
-
-Do you want me to do that?
-
-
----
-
 💡 **Pro Tips for STAR Use:**
 
 1. Always **quantify results** (%, time saved, revenue impact).
