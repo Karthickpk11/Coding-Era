@@ -46,8 +46,6 @@ Your task was to evaluate the loan application thoroughly, ensure regulatory com
 
 Absolutely! Let’s carefully craft a **STAR example** for **mitigating risk in banking**, specifically for **email hacking or phishing attacks**. This is highly relevant for roles in risk management, IT security, or fraud prevention.
 
----
-
 ### **3. Mitigating Email Hacking Risk in Banking**
 
 **Situation:**
