@@ -44,6 +44,41 @@ Your task was to evaluate the loan application thoroughly, ensure regulatory com
 * Client expanded their business, increasing revenue and banking relationship value.
 * Strengthened the bank’s reputation for supporting SME growth responsibly.
 
+Absolutely! Let’s carefully craft a **STAR example** for **mitigating risk in banking**, specifically for **email hacking or phishing attacks**. This is highly relevant for roles in risk management, IT security, or fraud prevention.
+
+---
+
+### **3. Mitigating Email Hacking Risk in Banking**
+
+**Situation:**
+The bank noticed an increase in suspicious activity: some employees were receiving phishing emails attempting to access internal systems and sensitive customer data. This posed a significant cybersecurity risk.
+
+**Task:**
+As a Risk Officer/IT Security Analyst, your task was to protect customer and employee information by reducing the risk of email hacks and phishing attacks, while maintaining workflow efficiency.
+
+**Action:**
+
+* Conducted a thorough assessment of current email security protocols and identified vulnerabilities.
+* Implemented multi-layered security measures, including multi-factor authentication (MFA), email filtering, and anti-phishing software.
+* Organized staff training sessions to recognize phishing attempts and report suspicious emails promptly.
+* Established a rapid response procedure for compromised accounts, including password resets and account monitoring.
+
+**Result:**
+
+* Reduced successful phishing attempts by over 80% within three months.
+* Enhanced staff awareness, creating a proactive security culture across the bank.
+* Strengthened the bank’s cybersecurity compliance posture, reducing potential regulatory and financial risk.
+
+---
+
+💡 **Tip:**
+For cybersecurity-related STAR answers in banking, emphasize:
+
+* **Prevention measures** (software, processes, employee training)
+* **Detection mechanisms** (alerts, monitoring systems)
+* **Impact** (reduced incidents, regulatory compliance, customer trust)
+
+
 ---
 
 ✅ **Key Tip:**
