@@ -57,6 +57,20 @@ if(Arrays.equals(strChar, strChar2)){
 }
 ```
 
+## replace an integer value with a string based on whether it is odd or even in Java, you can use the modulus (%) operator.
+```java
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+
+List<String> results = numbers.stream()
+    .map(n -> n % 2 == 0 ? "X" : "Y")
+    .collect(Collectors.toList());
+
+System.out.println(results);
+
+Output:
+[Y, X, Y, X, Y]
+```
+
 ### Equinix Coding Test:
 
 Given an array of integers numbers and an integer target, return indices of the two numbers such that they add up to target.
