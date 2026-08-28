@@ -22,6 +22,7 @@ S
 Spring
 
 1. Architecture
+   '
                          ┌──────────────────────────┐
                          │       Browser/User       │
                          └────────────┬─────────────┘
@@ -55,17 +56,14 @@ Spring
                     │ /userinfo                      │
                     │ /.well-known/...               │
                     └───────────────────────────────┘
-
+'
 
 Spring Security's OAuth2 Client supports Authorization Code, Refresh Token, Client Credentials and other grant types, while OAuth2 Login uses the Authorization Code flow to authenticate the user. 
-H
-Home
-+1
 
 2. Project structure
 
 Create one parent directory:
-
+`
 spring-oauth-demo/
 │
 ├── docker-compose.yml
@@ -96,7 +94,7 @@ spring-oauth-demo/
             │
             └── resources/
                 └── application.yml
-
+`
 3. OAuth Authorization Server
 
 The authorization server is responsible for:
