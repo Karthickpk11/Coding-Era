@@ -60,8 +60,8 @@ Spring Security's OAuth2 Client supports Authorization Code, Refresh Token, Clie
 
 2. Project structure
 
-Create one parent directory:
-`
+Create one parent directory: 
+---
 spring-oauth-demo/
 │
 ├── docker-compose.yml
@@ -92,7 +92,7 @@ spring-oauth-demo/
             │
             └── resources/
                 └── application.yml
-`
+---
 3. OAuth Authorization Server
 
 The authorization server is responsible for:
