@@ -14,15 +14,13 @@ Docker networking considerations
 
 I'll use Spring Boot 4.0.8 / Spring Security 7.x for the example. Spring Boot 4.0.8 is a current stable 4.0 release, while Spring Security 7 provides OAuth2 Client and Authorization Server functionality. 
 S
-Spring
-+1
 
 Important: Spring Authorization Server has moved into Spring Security 7; the older standalone Spring Authorization Server 1.5.x line is the last generation of that project. 
 S
 Spring
 
 1. Architecture
-   '
+---
                          ┌──────────────────────────┐
                          │       Browser/User       │
                          └────────────┬─────────────┘
@@ -56,7 +54,7 @@ Spring
                     │ /userinfo                      │
                     │ /.well-known/...               │
                     └───────────────────────────────┘
-'
+---
 
 Spring Security's OAuth2 Client supports Authorization Code, Refresh Token, Client Credentials and other grant types, while OAuth2 Login uses the Authorization Code flow to authenticate the user. 
 
