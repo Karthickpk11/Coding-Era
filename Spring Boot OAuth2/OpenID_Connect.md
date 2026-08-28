@@ -61,7 +61,7 @@ Spring Security's OAuth2 Client supports Authorization Code, Refresh Token, Clie
 
 Create one parent directory: 
 
-----
+```
 
 spring-oauth-demo/
 │
@@ -94,7 +94,7 @@ spring-oauth-demo/
             └── resources/
                 └── application.yml
                 
-----
+```
 
 3. OAuth Authorization Server
 
