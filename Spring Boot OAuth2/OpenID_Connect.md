@@ -13,11 +13,10 @@ JWT access/ID tokens
 Docker networking considerations
 
 I'll use Spring Boot 4.0.8 / Spring Security 7.x for the example. Spring Boot 4.0.8 is a current stable 4.0 release, while Spring Security 7 provides OAuth2 Client and Authorization Server functionality. 
-S
+
 
 Important: Spring Authorization Server has moved into Spring Security 7; the older standalone Spring Authorization Server 1.5.x line is the last generation of that project. 
-S
-Spring
+
 
 1. Architecture
 ---
@@ -62,7 +61,7 @@ Spring Security's OAuth2 Client supports Authorization Code, Refresh Token, Clie
 
 Create one parent directory: 
 
----
+----
 
 spring-oauth-demo/
 │
@@ -95,7 +94,7 @@ spring-oauth-demo/
             └── resources/
                 └── application.yml
                 
----
+----
 
 3. OAuth Authorization Server
 
